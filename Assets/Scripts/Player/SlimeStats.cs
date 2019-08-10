@@ -5,13 +5,14 @@ using UnityEngine;
 public class SlimeStats : MonoBehaviour
 {
 
-    public float health;
+    public float health, jumpForce;
     // Defense = physical, MagicDefense is base magical protection, Elemental defenses are magic defense multipliers
     public float defense, magicDefense, fireDefense, iceDefense, lightningDefense, poisonDefense;
 
     void Start()
     {
         Debug.Log("Health: " + health);
+        GetComponent<SlimeJump>().maxForce = jumpForce;
     }
 
 
