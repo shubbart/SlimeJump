@@ -26,6 +26,7 @@ public class SlimeJump : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        maxForce = SlimeStats.insance.jumpForce;
     }
 
 
@@ -51,11 +52,11 @@ public class SlimeJump : MonoBehaviour
                 aim = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
                 force = Mathf.Clamp01(Vector2.Distance(transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition)));              
             }
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && playerState == PlayerState.Prepping)
             {
                 force *= maxForce;
                 anim.SetBool("IsPrepping", false);
-                rbody.AddForce(aim * force, ForceMode2D.Impulse);
+                rbody.AddForce(aim * force * SlimeStats.insance.jumpForceModifier, ForceMode2D.Impulse);
                 playerState = PlayerState.Airborne;
             }
         }

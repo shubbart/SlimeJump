@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 1186747349}
   - component: {fileID: 1186747350}
   m_Layer: 0
-  m_Name: PinkSlime
+  m_Name: Slime
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,6 +598,14 @@ MonoBehaviour:
   iceDefense: 1
   lightningDefense: 1
   poisonDefense: 1
+  jumpForceModifier: 1
+  healthModifier: 1
+  defenseModifier: 1
+  mDefenseModifier: 1
+  fDefenseModifier: 1
+  iDefenseModifier: 1
+  lDefenseModifier: 1
+  pDefenseModifier: 1
 --- !u!95 &1186747350
 Animator:
   serializedVersion: 3
